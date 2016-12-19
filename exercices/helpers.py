@@ -23,9 +23,13 @@ def preprocess_data(data):
     """preprocessing the text data, conversion to numerical array format."""
     def deal_line(line):
         pos, rating = line.split(',')
-        row, col = pos.split("_")
-        row = row.replace("r", "")
-        col = col.replace("c", "")
+        
+        # Inversed row and col !
+        # Because ex10 data is inverd
+        col, row = pos.split("_")
+        row = row.replace("c", "")
+        col = col.replace("r", "")
+        
         return int(row), int(col), float(rating)
 
     def statistics(data):
@@ -45,6 +49,13 @@ def preprocess_data(data):
     for row, col, rating in data:
         ratings[row - 1, col - 1] = rating
     return ratings
+
+def predict(predictions):
+    with open("pred.csv", "w") as f:
+        f.write("Id,Prediction\n")
+        xs, ys = predictions.nonzero()
+        for i in np.arange(xs.size):
+            f.write("r{0}_c{1},{2}\n".format(ys[i]+1, xs[i]+1, predictions[xs[i], ys[i]]))
 
 
 def group_by(data, index):

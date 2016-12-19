@@ -37,14 +37,14 @@ def plot_raw_data(ratings):
 
 def plot_train_test_data(train, test):
     """visualize the train and test data."""
-    fig = plt.figure()
-    ax1 = fig.add_subplot(1, 2, 1)
-    ax1.spy(train, precision=0.01, markersize=0.5)
+    fig = plt.figure(figsize=(10,10))
+    ax1 = fig.add_subplot(2, 1, 1)
+    ax1.spy(train, precision=0.01, markersize=0.5, aspect="auto")
     ax1.set_xlabel("Users")
     ax1.set_ylabel("Items")
     ax1.set_title("Training data")
-    ax2 = fig.add_subplot(1, 2, 2)
-    ax2.spy(test, precision=0.01, markersize=0.5)
+    ax2 = fig.add_subplot(2, 1, 2)
+    ax2.spy(test, precision=0.01, markersize=0.5, aspect="auto")
     ax2.set_xlabel("Users")
     ax2.set_ylabel("Items")
     ax2.set_title("Test data")
