@@ -6,6 +6,7 @@ from tqdm import tqdm
 from random import sample
 
 def rmse(data, user_features, item_features):
+    """Compute the root mean square between data and the dot product of the feature matrices"""
     nz_row, nz_col = data.nonzero()
     nz = list(zip(nz_row, nz_col))
     WZ = item_features.T @ user_features
@@ -15,18 +16,19 @@ def rmse(data, user_features, item_features):
     return np.sqrt(s / len(nz))
 
 def init_MF(train, num_features):
-    """init the parameter for matrix factorization."""
+    """Init the parameter for matrix factorization."""
     num_item, num_user = train.shape
     item_features = np.random.random((num_features, num_item)) * np.sqrt(5 / num_features) # W
     user_features = np.random.random((num_features, num_user)) * np.sqrt(5 / num_features) # Z
     return user_features, item_features
 
 def update_user_feature(ratings, user_features, item_features, lambda_user):
-    """update user feature matrix."""
+    """Update user feature matrix."""
     num_item = ratings.shape[0]
     num_user = ratings.shape[1]
     num_features = item_features.shape[0]
     
+    # update the features for each user
     for i in tqdm(range(num_user), desc="update user"):
         nz = ratings[:, i].nonzero()[0]
         y = ratings[nz, i].todense()
@@ -36,15 +38,14 @@ def update_user_feature(ratings, user_features, item_features, lambda_user):
     return user_features
 
 def update_item_feature(ratings, user_features, item_features, lambda_item):
-    """update item feature matrix."""
-    xs, ys = ratings.nonzero()
-    
+    """Update item feature matrix."""
     num_item = ratings.shape[0]
     num_user = ratings.shape[1]
     num_features = user_features.shape[0]
     
     ratingsT = ratings.T
     
+    # update the features for each items
     for i in tqdm(range(num_item), desc="update item"):
         nz = ratingsT[:, i].nonzero()[0]
         y = ratingsT[nz, i].todense()
@@ -61,18 +62,22 @@ def ALS(train, test, num_features, lambda_user, lambda_item, max_iter=1):
     # init ALS
     user_features, item_features = init_MF(train, num_features)
     
+    # print the initial RMSE
     tr_error = rmse(train, user_features, item_features)
     te_error = rmse(test, user_features, item_features)
     print("initial train rmse : ", tr_error, "\ninitial test rmse : ", te_error)
 
     i = 0
     while True:
+        # stop when max_iter reached
         if i >= max_iter:
             break
             
+        # update the features
         item_features = update_item_feature(train, user_features, item_features, lambda_item)
         user_features = update_user_feature(train, user_features, item_features, lambda_user)
         
+        # print the RMSE
         tr_error = rmse(train, user_features, item_features)
         te_error = rmse(test, user_features, item_features)
         print("train rmse : ", tr_error, "\ntest rmse : ", te_error)

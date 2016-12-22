@@ -8,7 +8,7 @@ import scipy.sparse as sp
 
 
 def read_txt(path):
-    """read text file from path."""
+    """Read text file from path."""
     with open(path, "r") as f:
         return f.read().splitlines()
 
@@ -20,7 +20,7 @@ def load_data(path_dataset):
 
 
 def preprocess_data(data):
-    """preprocessing the text data, conversion to numerical array format."""
+    """Preprocessing the text data, conversion to numerical array format."""
     def deal_line(line):
         pos, rating = line.split(',')
         
@@ -50,23 +50,16 @@ def preprocess_data(data):
     return ratings
 
 def predict(predictions):
+    """Write the prediction in a csv file"""
     with open("pred.csv", "w") as f:
         f.write("Id,Prediction\n")
         xs, ys = predictions.nonzero()
         for i in np.arange(xs.size):
             f.write("r{0}_c{1},{2}\n".format(ys[i]+1, xs[i]+1, predictions[xs[i], ys[i]]))
 
-def calculate_mse(real_label, prediction):
-    """calculate MSE."""
-    t = real_label - prediction
-    return 1.0 * t.dot(t.T)
-
 def split_data(ratings, num_items_per_user, num_users_per_item,
                min_num_ratings, p_test=0.1):
-    """split the ratings to training data and test data.
-    Args:
-        min_num_ratings: 
-            all users and items we keep must have at least min_num_ratings per user and per item. 
+    """Split the ratings to training set and validation set.
     """
     # set seed
     np.random.seed(998)
