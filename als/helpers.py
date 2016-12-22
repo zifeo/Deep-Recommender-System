@@ -42,7 +42,6 @@ def preprocess_data(data):
 
     # do statistics on the dataset.
     min_row, max_row, min_col, max_col = statistics(data)
-    print("number of items: {}, number of users: {}".format(max_row, max_col))
 
     # build rating matrix.
     ratings = sp.lil_matrix((max_row, max_col))
@@ -57,30 +56,35 @@ def predict(predictions):
         for i in np.arange(xs.size):
             f.write("r{0}_c{1},{2}\n".format(ys[i]+1, xs[i]+1, predictions[xs[i], ys[i]]))
 
-
-def group_by(data, index):
-    """group list of list by a specific index."""
-    sorted_data = sorted(data, key=lambda x: x[index])
-    groupby_data = groupby(sorted_data, lambda x: x[index])
-    return groupby_data
-
-
-def build_index_groups(train):
-    """build groups for nnz rows and cols."""
-    nz_row, nz_col = train.nonzero()
-    nz_train = list(zip(nz_row, nz_col))
-
-    grouped_nz_train_byrow = group_by(nz_train, index=0)
-    nz_row_colindices = [(g, np.array([v[1] for v in value]))
-                         for g, value in grouped_nz_train_byrow]
-
-    grouped_nz_train_bycol = group_by(nz_train, index=1)
-    nz_col_rowindices = [(g, np.array([v[0] for v in value]))
-                         for g, value in grouped_nz_train_bycol]
-    return nz_train, nz_row_colindices, nz_col_rowindices
-
-
 def calculate_mse(real_label, prediction):
     """calculate MSE."""
     t = real_label - prediction
     return 1.0 * t.dot(t.T)
+
+def split_data(ratings, num_items_per_user, num_users_per_item,
+               min_num_ratings, p_test=0.1):
+    """split the ratings to training data and test data.
+    Args:
+        min_num_ratings: 
+            all users and items we keep must have at least min_num_ratings per user and per item. 
+    """
+    # set seed
+    np.random.seed(998)
+    
+    # select user and item based on the condition.
+    valid_users = np.where(num_items_per_user >= min_num_ratings)[0]
+    valid_items = np.where(num_users_per_item >= min_num_ratings)[0]
+    valid_ratings = ratings[valid_items, :][: , valid_users]  
+    
+    xs, ys = valid_ratings.nonzero()
+    indices = list(zip(xs, ys))
+    np.random.shuffle(indices)
+    
+    cut = int(p_test * len(indices))
+    train = valid_ratings.copy()
+    xs, ys = zip(*indices)
+    train[xs[:cut], ys[:cut]] = 0
+    test = valid_ratings.copy()
+    test[xs[cut:], ys[cut:]] = 0
+
+    return valid_ratings, train, test
