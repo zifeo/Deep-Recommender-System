@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="1383.9 -365.5 1145.6 1210.3" style="enable-background:new 1383.9 -365.5 1145.6 1210.3;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:none;stroke:#000000;}
+	.st1{font-family:'Times-Roman';}
+	.st2{font-size:14px;}
+	.st3{stroke:#000000;}
+</style>
+<g id="graph0" transform="scale(1 1) rotate(0) translate(4 1152)">
+	<title>G</title>
+	<g id="node1">
+		<title>140149048160496</title>
+		<polygon class="st0" points="1483.4,-1447.1 1483.4,-1483.1 1608.4,-1483.1 1608.4,-1447.1 		"/>
+		<text transform="matrix(1 0 0 1 1489.7063 -1461.4)" class="st1 st2">user n°: InputLayer</text>
+	</g>
+	<g id="node3">
+		<title>140149048161896</title>
+		<polygon class="st0" points="1465.4,-1373.1 1465.4,-1409.1 1626.4,-1409.1 1626.4,-1373.1 		"/>
+		<text transform="matrix(1 0 0 1 1471.8167 -1387.4)" class="st1 st2">embedding_1: Embedding</text>
+	</g>
+	<g id="edge1">
+		<title>140149048160496-&gt;140149048161896</title>
+		<path class="st0" d="M1545.9-1447c0,8.1,0,18.1,0,27.2"/>
+		<polygon class="st3" points="1549.4,-1419.5 1545.9,-1409.5 1542.4,-1419.5 		"/>
+	</g>
+	<g id="node2">
+		<title>140149048161672</title>
+		<polygon class="st0" points="1754.4,-1447.1 1754.4,-1483.1 1879.4,-1483.1 1879.4,-1447.1 		"/>
+		<text transform="matrix(1 0 0 1 1760.7063 -1461.4)" class="st1 st2">item n°: InputLayer</text>
+	</g>
+	<g id="node4">
+		<title>140149048161728</title>
+		<polygon class="st0" points="1736.4,-1373.1 1736.4,-1409.1 1897.4,-1409.1 1897.4,-1373.1 		"/>
+		<text transform="matrix(1 0 0 1 1742.8167 -1387.4)" class="st1 st2">embedding_2: Embedding</text>
+	</g>
+	<g id="edge2">
+		<title>140149048161672-&gt;140149048161728</title>
+		<path class="st0" d="M1816.9-1447c0,8.1,0,18.1,0,27.2"/>
+		<polygon class="st3" points="1820.4,-1419.5 1816.9,-1409.5 1813.4,-1419.5 		"/>
+	</g>
+	<g id="node5">
+		<title>140149047782816</title>
+		<polygon class="st0" points="1490.9,-1299.1 1490.9,-1335.1 1600.9,-1335.1 1600.9,-1299.1 		"/>
+		<text transform="matrix(1 0 0 1 1497.8718 -1313.4001)" class="st1 st2">flatten_1: Flatten</text>
+	</g>
+	<g id="edge3">
+		<title>140149048161896-&gt;140149047782816</title>
+		<path class="st0" d="M1545.9-1373c0,8.1,0,18.1,0,27.2"/>
+		<polygon class="st3" points="1549.4,-1345.5 1545.9,-1335.5 1542.4,-1345.5 		"/>
+	</g>
+	<g id="node6">
+		<title>140149047783264</title>
+		<polygon class="st0" points="1761.9,-1299.1 1761.9,-1335.1 1871.9,-1335.1 1871.9,-1299.1 		"/>
+		<text transform="matrix(1 0 0 1 1768.8718 -1313.4001)" class="st1 st2">flatten_2: Flatten</text>
+	</g>
+	<g id="edge4">
+		<title>140149048161728-&gt;140149047783264</title>
+		<path class="st0" d="M1816.9-1373c0,8.1,0,18.1,0,27.2"/>
+		<polygon class="st3" points="1820.4,-1345.5 1816.9,-1335.5 1813.4,-1345.5 		"/>
+	</g>
+	<g id="node13">
+		<title>140148675583560</title>
+		<polygon class="st0" points="1419.4,-1225.1 1419.4,-1261.1 1672.4,-1261.1 1672.4,-1225.1 		"/>
+		<text transform="matrix(1 0 0 1 1424.3992 -1239.4001)" class="st1 st2">batchnormalization_1: BatchNormalization</text>
+	</g>
+	<g id="edge5">
+		<title>140149047782816-&gt;140148675583560</title>
+		<path class="st0" d="M1545.9-1299c0,8.1,0,18.1,0,27.2"/>
+		<polygon class="st3" points="1549.4,-1271.5 1545.9,-1261.5 1542.4,-1271.5 		"/>
+	</g>
+	<g id="node14">
+		<title>140148675580592</title>
+		<polygon class="st0" points="1690.4,-1225.1 1690.4,-1261.1 1943.4,-1261.1 1943.4,-1225.1 		"/>
+		<text transform="matrix(1 0 0 1 1695.3992 -1239.4001)" class="st1 st2">batchnormalization_2: BatchNormalization</text>
+	</g>
+	<g id="edge6">
+		<title>140149047783264-&gt;140148675580592</title>
+		<path class="st0" d="M1816.9-1299c0,8.1,0,18.1,0,27.2"/>
+		<polygon class="st3" points="1820.4,-1271.5 1816.9,-1261.5 1813.4,-1271.5 		"/>
+	</g>
+	<g id="node7">
+		<title>140149047838984</title>
+		<polygon class="st0" points="2025.4,-1299.1 2025.4,-1335.1 2150.4,-1335.1 2150.4,-1299.1 		"/>
+		<text transform="matrix(1 0 0 1 2031.7063 -1313.4001)" class="st1 st2">user ctx: InputLayer</text>
+	</g>
+	<g id="node15">
+		<title>140148675730624</title>
+		<polygon class="st0" points="1961.4,-1225.1 1961.4,-1261.1 2214.4,-1261.1 2214.4,-1225.1 		"/>
+		<text transform="matrix(1 0 0 1 1966.3992 -1239.4001)" class="st1 st2">batchnormalization_3: BatchNormalization</text>
+	</g>
+	<g id="edge7">
+		<title>140149047838984-&gt;140148675730624</title>
+		<path class="st0" d="M2087.9-1299c0,8.1,0,18.1,0,27.2"/>
+		<polygon class="st3" points="2091.4,-1271.5 2087.9,-1261.5 2084.4,-1271.5 		"/>
+	</g>
+	<g id="node8">
+		<title>140149047878208</title>
+		<polygon class="st0" points="2296.4,-1299.1 2296.4,-1335.1 2421.4,-1335.1 2421.4,-1299.1 		"/>
+		<text transform="matrix(1 0 0 1 2302.7063 -1313.4001)" class="st1 st2">item ctx: InputLayer</text>
+	</g>
+	<g id="node16">
+		<title>140148542396680</title>
+		<polygon class="st0" points="2232.4,-1225.1 2232.4,-1261.1 2485.4,-1261.1 2485.4,-1225.1 		"/>
+		<text transform="matrix(1 0 0 1 2237.3992 -1239.4001)" class="st1 st2">batchnormalization_6: BatchNormalization</text>
+	</g>
+	<g id="edge8">
+		<title>140149047878208-&gt;140148542396680</title>
+		<path class="st0" d="M2358.9-1299c0,8.1,0,18.1,0,27.2"/>
+		<polygon class="st3" points="2362.4,-1271.5 2358.9,-1261.5 2355.4,-1271.5 		"/>
+	</g>
+	<g id="node21">
+		<title>140149048097928</title>
+		<polygon class="st0" points="1894.9,-1151.1 1894.9,-1187.1 2002.9,-1187.1 2002.9,-1151.1 		"/>
+		<text transform="matrix(1 0 0 1 1902.6799 -1165.4001)" class="st1 st2">merge_1: Merge</text>
+	</g>
+	<g id="edge13">
+		<title>140148675583560-&gt;140149048097928</title>
+		<path class="st0" d="M1545.9-1225c1.1,29.8,348.7,59.6,348.7,59.6"/>
+	</g>
+	<g id="edge14">
+		<title>140148675580592-&gt;140149048097928</title>
+		<path class="st0" d="M1820.4-1225.1c0.6,33.1,74.5,38,74.5,38"/>
+	</g>
+	<g id="edge15">
+		<title>140148675730624-&gt;140149048097928</title>
+		<path class="st0" d="M2087.9-1225c-0.9,40.1-85,37.9-85,37.9"/>
+	</g>
+	<g id="edge16">
+		<title>140148542396680-&gt;140149048097928</title>
+		<path class="st0" d="M2362.4-1225c0.6,39.6-359.5,59.6-359.5,59.6"/>
+	</g>
+	<g id="node22">
+		<title>140149048138216</title>
+		<polygon class="st0" points="1897.9,-1077.1 1897.9,-1113.1 1999.9,-1113.1 1999.9,-1077.1 		"/>
+		<text transform="matrix(1 0 0 1 1904.7615 -1091.4)" class="st1 st2">dense_1: Dense</text>
+	</g>
+	<g id="edge21">
+		<title>140149048097928-&gt;140149048138216</title>
+		<path class="st0" d="M1948.9-1151c0,8.1,0,18.1,0,27.2"/>
+		<polygon class="st3" points="1952.4,-1123.5 1948.9,-1113.5 1945.4,-1123.5 		"/>
+	</g>
+	<g id="node23">
+		<title>140147758499488</title>
+		<polygon class="st0" points="1886.4,-1003.1 1886.4,-1039.1 2011.4,-1039.1 2011.4,-1003.1 		"/>
+		<text transform="matrix(1 0 0 1 1893.0857 -1017.4)" class="st1 st2">dropout_1: Dropout</text>
+	</g>
+	<g id="edge22">
+		<title>140149048138216-&gt;140147758499488</title>
+		<path class="st0" d="M1948.9-1077c0,8.1,0,18.1,0,27.2"/>
+		<polygon class="st3" points="1952.4,-1049.5 1948.9,-1039.5 1945.4,-1049.5 		"/>
+	</g>
+	<g id="node24">
+		<title>140147757945464</title>
+		<polygon class="st0" points="1822.4,-929.1 1822.4,-965.1 2075.4,-965.1 2075.4,-929.1 		"/>
+		<text transform="matrix(1 0 0 1 1827.3992 -943.4)" class="st1 st2">batchnormalization_9: BatchNormalization</text>
+	</g>
+	<g id="edge23">
+		<title>140147758499488-&gt;140147757945464</title>
+		<path class="st0" d="M1948.9-1003c0,8.1,0,18.1,0,27.2"/>
+		<polygon class="st3" points="1952.4,-975.5 1948.9,-965.5 1945.4,-975.5 		"/>
+	</g>
+	<g id="node25">
+		<title>140147758098136</title>
+		<polygon class="st0" points="1897.9,-855.1 1897.9,-891.1 1999.9,-891.1 1999.9,-855.1 		"/>
+		<text transform="matrix(1 0 0 1 1904.7615 -869.4)" class="st1 st2">dense_2: Dense</text>
+	</g>
+	<g id="edge24">
+		<title>140147757945464-&gt;140147758098136</title>
+		<path class="st0" d="M1948.9-929c0,8.1,0,18.1,0,27.2"/>
+		<polygon class="st3" points="1952.4,-901.5 1948.9,-891.5 1945.4,-901.5 		"/>
+	</g>
+	<g id="node26">
+		<title>140147757401816</title>
+		<polygon class="st0" points="1886.4,-781.1 1886.4,-817.1 2011.4,-817.1 2011.4,-781.1 		"/>
+		<text transform="matrix(1 0 0 1 1893.0857 -795.4)" class="st1 st2">dropout_2: Dropout</text>
+	</g>
+	<g id="edge25">
+		<title>140147758098136-&gt;140147757401816</title>
+		<path class="st0" d="M1948.9-855c0,8.1,0,18.1,0,27.2"/>
+		<polygon class="st3" points="1952.4,-827.5 1948.9,-817.5 1945.4,-827.5 		"/>
+	</g>
+	<g id="node27">
+		<title>140147757402432</title>
+		<polygon class="st0" points="1818.9,-707.1 1818.9,-743.1 2078.9,-743.1 2078.9,-707.1 		"/>
+		<text transform="matrix(1 0 0 1 1823.8992 -721.4)" class="st1 st2">batchnormalization_10: BatchNormalization</text>
+	</g>
+	<g id="edge26">
+		<title>140147757401816-&gt;140147757402432</title>
+		<path class="st0" d="M1948.9-781c0,8.1,0,18.1,0,27.2"/>
+		<polygon class="st3" points="1952.4,-753.5 1948.9,-743.5 1945.4,-753.5 		"/>
+	</g>
+	<g id="node28">
+		<title>140147756943008</title>
+		<polygon class="st0" points="1897.9,-633.1 1897.9,-669.1 1999.9,-669.1 1999.9,-633.1 		"/>
+		<text transform="matrix(1 0 0 1 1904.7615 -647.4)" class="st1 st2">dense_3: Dense</text>
+	</g>
+	<g id="edge27">
+		<title>140147757402432-&gt;140147756943008</title>
+		<path class="st0" d="M1948.9-707c0,8.1,0,18.1,0,27.2"/>
+		<polygon class="st3" points="1952.4,-679.5 1948.9,-669.5 1945.4,-679.5 		"/>
+	</g>
+	<g id="node29">
+		<title>140147756400144</title>
+		<polygon class="st0" points="1886.4,-559.1 1886.4,-595.1 2011.4,-595.1 2011.4,-559.1 		"/>
+		<text transform="matrix(1 0 0 1 1893.0857 -573.4)" class="st1 st2">dropout_3: Dropout</text>
+	</g>
+	<g id="edge28">
+		<title>140147756943008-&gt;140147756400144</title>
+		<path class="st0" d="M1948.9-633c0,8.1,0,18.1,0,27.2"/>
+		<polygon class="st3" points="1952.4,-605.5 1948.9,-595.5 1945.4,-605.5 		"/>
+	</g>
+	<g id="node30">
+		<title>140147756739776</title>
+		<polygon class="st0" points="1818.9,-485.1 1818.9,-521.1 2078.9,-521.1 2078.9,-485.1 		"/>
+		<text transform="matrix(1 0 0 1 1824.1555 -499.4)" class="st1 st2">batchnormalization_11: BatchNormalization</text>
+	</g>
+	<g id="edge29">
+		<title>140147756400144-&gt;140147756739776</title>
+		<path class="st0" d="M1948.9-559c0,8.1,0,18.1,0,27.2"/>
+		<polygon class="st3" points="1952.4,-531.5 1948.9,-521.5 1945.4,-531.5 		"/>
+	</g>
+	<g id="node31">
+		<title>140147756317104</title>
+		<polygon class="st0" points="1897.9,-411.1 1897.9,-447.1 1999.9,-447.1 1999.9,-411.1 		"/>
+		<text transform="matrix(1 0 0 1 1904.7615 -425.4)" class="st1 st2">dense_4: Dense</text>
+	</g>
+	<g id="edge30">
+		<title>140147756739776-&gt;140147756317104</title>
+		<path class="st0" d="M1948.9-485c0,8.1,0,18.1,0,27.2"/>
+		<polygon class="st3" points="1952.4,-457.5 1948.9,-447.5 1945.4,-457.5 		"/>
+	</g>
+	<g id="node32">
+		<title>140147756002440</title>
+		<polygon class="st0" points="1897.9,-337.1 1897.9,-373.1 1999.9,-373.1 1999.9,-337.1 		"/>
+		<text transform="matrix(1 0 0 1 1904.7615 -351.4001)" class="st1 st2">dense_5: Dense</text>
+	</g>
+	<g id="edge31">
+		<title>140147756317104-&gt;140147756002440</title>
+		<path class="st0" d="M1948.9-411c0,8.1,0,18.1,0,27.2"/>
+		<polygon class="st3" points="1952.4,-383.5 1948.9,-373.5 1945.4,-383.5 		"/>
+	</g>
+</g>
+</svg>

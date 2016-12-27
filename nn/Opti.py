@@ -14,8 +14,8 @@ def data():
     pos = ratings.Id.str.extract('r([0-9]+)_c([0-9]+)', expand=True)
     ratings['User'] = pos[0]
     ratings['Item'] = pos[1]
-    ratings = ratings.iloc[:100000]
-
+    ratings = ratings.iloc[:200000]
+    
     y = numpy.zeros([ratings.shape[0], 5])
     y[numpy.arange(ratings.shape[0]), ratings.Prediction - 1] = 1
     y.shape
@@ -65,17 +65,25 @@ def model(X_train, Y_train, X_test, Y_test):
               validation_data=(X_test, Y_test))
     
     score, acc = model.evaluate(X_test, Y_test, verbose=0)
-    print('Test accuracy:', acc)
-    return {'loss': -acc, 'status': STATUS_OK, 'model': model}
+
+    mse = metrics.mean_squared_error(
+      numpy.argmax(Y_test, 1) + 1, 
+      numpy.argmax(model.predict(X_test), 1) + 1
+    )
+    rmse = numpy.sqrt(mse)
+
+    print('Test accuracy:', rmse)
+    return {'loss': rmse, 'status': STATUS_OK, 'model': model}
 
 if __name__ == '__main__':
 
     best_run, best_model = optim.minimize(model=model,
                                           data=data,
                                           algo=tpe.suggest,
-                                          max_evals=5,
+                                          max_evals=15,
                                           trials=Trials())
     print("Evalutation of best performing model:")
+    X_train, Y_train, X_test, Y_test = data()
     print(best_model.evaluate(X_test, Y_test))
     print(best_run)
 
