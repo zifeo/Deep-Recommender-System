@@ -1,6 +1,5 @@
 data
 *.csv
-*.png
 *.DS_Store
 .idea
 *.iws
