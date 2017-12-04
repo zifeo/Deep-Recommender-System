@@ -29,12 +29,6 @@ In order to install Tensorflow, follow the guide on this link: https://www.tenso
 
 In the "export" command, replace the version number from "12" to "11".
 
-### `run.py`
-
-This script implements the neural network producing our best predictions. It loads a previously created and trained network in order to reproduce our best submission.
-
-Note: The ratings might differ from our Kaggle submission starting at the 7th or 8th decimal digit due to floating-point differences (GPU vs CPU/system).
-
 ### `run_als.py`
 
 This script implements Alternating Least Squares.
